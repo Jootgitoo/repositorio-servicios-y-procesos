@@ -1,0 +1,20 @@
+En el paquete com.psp.uno crear una clase Multiplicador, con método multiplicar
+que devuelva el resultado de multiplicar dos números pasados como parámetro.
+Además, se deberá crear un método main que reciba como argumento dos números y con dichos números
+llame al método de multiplicar. Una vez obtenido el resultado, desde el método main se debe mostrar
+por pantalla el resultado de la multiplicación. Escribir un programa Java que tendrá la misión de ser
+un "Creador de procesos", al que llamaremos LanzadorMultiplicador.  El método lanzarMultiplicador, tendrá
+como parámetros de entrada los dos números que se van a multiplicar, así como un tercer parámetro con el
+nombre del fichero de salida. El programa java, (proceso padre) ,  tendrá un método llamado lanzarMultiplicador,
+el cual con la clase ProcessBuilder ejecutará la clase java com.psp.Multiplicador. Recuerda especificar el
+classpath cuando llames al proceso Java. También se debe redirigir la salida de error estándar a un fichero
+error.log (añádele al nombre del fichero System.currentTimeMillis() para que cada vez que se ejecute se genere
+un fichero diferente. Redirige la salida estándar a un fichero cuyo nombre será el indicado por parámetro. Ambos
+ficheros deberán generarse en el directorio files del proyecto. Comprueba también si el proceso ha terminado o
+no correctamente, en el caso que termine correctamente muestra por consola el contenido del fichero al que se
+redirigió la salida estándar. Crear en la clase LanzadorMultiplicador, un método main desde donde se pedirá
+multiplicar dos números. Crear un programa que sea capaz de contar cuantas vocales hay en un fichero. El
+programa padre debe lanzar cinco procesos hijo, donde cada uno de ellos se ocupará de contar una vocal
+concreta (que puede ser minúscula o mayúscula). Cada subproceso que cuenta vocales deberá dejar el
+resultado en un fichero. El programa padre se ocupará de recuperar los resultados de los ficheros, sumar
+todos los subtotales y mostrar el resultado final en pantalla.
