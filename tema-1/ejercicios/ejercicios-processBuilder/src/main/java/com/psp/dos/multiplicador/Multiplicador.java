@@ -24,14 +24,16 @@ public class Multiplicador {
      * @param args String[0] = n1, String[1] = n2
      */
     public static void main(String[] args) {
-        //Recupera los n�meros a multiplicar de los argumentos
+        if (args.length < 2) {
+            System.out.println("Error: please provide two arguments");
+            return;
+        }
+
         int n1 = Integer.parseInt(args[0]);
         int n2 = Integer.parseInt(args[1]);
 
-        //Realiza la multiplicaci�n: n1 * n2
-        int resultado = Multiplicador.multiplicar(n1, n2);
+        int resultado = multiplicar(n1, n2);
 
-        //Muestra por pantalla el resultado de la multiplicaci�n
-        System.out.println("El resultado de multiplicar: "+n1+" * "+n2+" es: "+resultado);
+        System.out.println("El resultado de multiplicar: " + n1 + " * " + n2 + " es: " + resultado);
     }
 }

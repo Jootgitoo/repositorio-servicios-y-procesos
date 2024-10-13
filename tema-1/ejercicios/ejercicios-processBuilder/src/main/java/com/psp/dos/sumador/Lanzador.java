@@ -18,12 +18,12 @@ import java.io.InputStream;
 public class Lanzador {
 
     public void lanzarSumador(int n1, int n2, String fNombreSalida) throws IOException, InterruptedException{
-        String clase = "com.psp.dos.sumador";
+        String clase = "com.psp.dos.sumador.Sumador";
         ProcessBuilder pb;
         Process process = null;
         int exitValue;
         try {
-            String classPath = "./files";
+            String classPath = ".;./target/classes";
 
             pb = new ProcessBuilder("java", "-cp", classPath, clase, String.valueOf(n1),
                     String.valueOf(n2));

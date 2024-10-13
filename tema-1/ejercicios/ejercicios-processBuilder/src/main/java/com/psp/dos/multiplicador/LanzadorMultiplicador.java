@@ -28,8 +28,9 @@ public class LanzadorMultiplicador {
 
         Process process;
 
+
         try {
-            String classPath = "./files";
+            String classPath = ".;./target/classes";
 
             // Proceso que ejecuta la clase java Multiplicador
             //"java" --> Comando para ejecutar la JVM
@@ -38,7 +39,7 @@ public class LanzadorMultiplicador {
             //"com.psp.dos.multiplicador" --> Es el nombre completo de la clase principal que se va a ejecutar
             //String.valueOf(n1): Convierte el valor de n1 (presumiblemente un número) a una cadena. Este será el primer argumento para el programa Java.
             //String.valueOf(n2): Convierte el valor de n2 a una cadena. Este será el segundo argumento para el programa Java.
-            ProcessBuilder pb = new ProcessBuilder("java", "-cp", classPath, "./multiplicador", String.valueOf(n1), String.valueOf(n2));
+            ProcessBuilder pb = new ProcessBuilder("java", "-cp", classPath, "com.psp.dos.multiplicador.Multiplicador", String.valueOf(n1), String.valueOf(n2));
 
             //Cambiar salida de error estandar a error.log
             //File.separator = a añadir \ --> en este caso es "files2\error_*codigoDelError*.log

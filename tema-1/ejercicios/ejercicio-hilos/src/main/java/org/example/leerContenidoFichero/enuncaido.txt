@@ -1,0 +1,5 @@
+Desarrollar un programa que lea el contenido de un fichero de texto y cuente
+el número de palabras que tiene. En vez de hacer un programa único que cuente todas las palabras,
+realizar un programa padre que por cada línea cree un hilo cuya función sea contar las palabras de la línea dada.
+Una vez finalicen todos los hilos, pedir el número de palabras leídas a cada hilo y mostrar por consola el
+número de palabras totales.
