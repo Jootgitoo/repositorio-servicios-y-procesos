@@ -1,0 +1,21 @@
+Crear un código en Java que simule una situación en la que varios alumnos entran
+a un aula y esperen hasta que el profesor saluda para poder responder con un saludo.
+
+ - Crea una clase Saludar con un método saludarProfe(String nombreAlumno) que haga uso de wait()
+  y después muestre por consola el nombre del alumno seguido del mensaje “Buenos dias Profesor”
+  para cuando tengan que saludar los alumnos y un método respondersaludo() que primero muestre por
+  consola el saludo del profesor “Profesor -> Buenos dias” y después haga uso de notifyAll(),
+  para avisar que ya pueden saludar los alumnos.
+
+ - Crea una clase Aula que sea un hilo, que tenga por atributos el nombre (del alumno o profesor),
+ una instancia de la clase Saludo compartido la cual será la misma para todos los hilos,
+ y un campo Booleano esProfesor: que indica si el objeto Aula es o no un profesor.
+ El método run, si el hilo es el profesor (esProfesor es true), llamará al método respondersaludo()
+ de la clase Saludo, lo que permitirá a los alumnos saludar, si no es el profesor, llama al método
+ saludarProfe(nombre), lo que hace que el hilo espere hasta que el profesor salude.
+
+ Crear una clase UsarAula, que cree al menos 6 alumnos y un profesor, los cuales serán objetos de la clase Aula.
+ Después lanzar primero los alumnos y el último el profesor. Comprobar que todos los hilos han terminado.
+
+ Si ha funcionado bien, en la consola veremos como el primero en saludar será el profesor y
+ después lo harán los alumnos.

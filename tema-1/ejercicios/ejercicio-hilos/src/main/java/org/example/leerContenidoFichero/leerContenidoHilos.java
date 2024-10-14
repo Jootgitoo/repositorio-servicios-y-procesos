@@ -1,53 +1,40 @@
 package org.example.leerContenidoFichero;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class leerContenidoHilos extends Thread{
+/*
+    public class ContadorDePalabras {
 
-    public void leerArchivo(){
+        String rutaDelFichero = "D:\\dam-2\\programacion-servicios-procesos\\repositorio-servicios-y-procesos\\tema-1\\ejercicios\\ejercicio-hilos\\src\\main\\java\\org\\example\\leerContenidoFichero\\enuncaido.txt"; // ruta del fichero de texto
+        int contadorDePalabras = 0;
 
-        File archivoALeer = new File("src/main/java/org/example/leerContenidoFichero/enuncaido.txt");
-
-        BufferedReader lectura = new BufferedReader( new FileReader(archivoALeer) );
-
-        String linea;
-
-        if ( (  linea = lectura.readLine()) != null){
-
-            String[] aux = linea.split(" ");
-
-            for (int j=0; j<aux.length; j++){
-                conta++;
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(rutaDelFichero));
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] palabras = linea.split("\\s+"); // separamos las palabras por espacios
+                contadorDePalabras += palabras.length;
             }
-        }
+            System.out.println("El fichero tiene " + contadorDePalabras + " palabras.");
+
+        } catch (FileNotFoundException ex){
+            System.out.println(ex);
+
+        } catch (IOException error) {
+        System.err.println("Error al leer el fichero: " + error.getMessage());
+    }
+
     }
 
 
     public void run(){
 
-        try{
 
-
-            int conta = 0;
-
-
-
-
-
-
-
-
-
-        } catch (FileNotFoundException exception) {
-            System.out.println("Excepcion: " + exception);
-
-        } catch (IOException exception) {
-            System.out.println("Excepcion: " + exception);
-        }
 
     }
-
+*/
 }
