@@ -7,13 +7,15 @@ public class Usuario extends Thread {
     private Ascensor ascensor;
 
     public Usuario (int pisoDestino){
-        this.pisoDestino = pisoDestino;
 
-        ascensor = Ascensor.
+        this.pisoDestino = pisoDestino;
+        ascensor = Ascensor.getInstance();
     }
 
     @Override
     public void run(){
+
+        ascensor.moverArcensor(pisoDestino);
 
     }
 
