@@ -1,0 +1,17 @@
+Mediante hilos elaborar una clase que ejecute el proceso del ascensor, donde 3 usuarios suban al ascensor y vayan bajando al piso deseado.
+
+Crear una clase Ascensor que tenga por atributos el pisoActual
+que indica el piso en el que se encuentra el ascensor en un momento dado,
+así como el número máximo de pisos(maxPisos) que tiene el edificio. Crear un método moverAscensor(int pisoDestino)
+que se encarga de mover el ascensor al piso de destino desde el piso actual. La duración del movimiento se simula usando
+Thread.sleep(), con 1 segundo por cada piso que se mueve. Tener en cuenta que el método tendrá que ser sincronizado,
+para que los usuarios se bajen de uno en uno.
+
+Crear una clase Usuario, que sea un hilo, que tenga como atributos el pisoDestino,
+el cual es el piso al que el usuario quiere ir, una instancia de la clase Ascensor la cual
+será la misma para todos los hilos, que será el Ascensor que los usuarios van a utilizar.
+En el método run() llama al método moverAscensor() para llevar el ascensor al piso de destino del usuario, y
+mostrar un mensaje por consola indicando el piso al que el usuario se ha movido.
+
+Crear Clase SimuladorAscensor, como punto de entrada principal del programa.
+Crea una instancia del ascensor y varios usuarios. Luego, inicia los hilos correspondientes y espera a que terminen.
