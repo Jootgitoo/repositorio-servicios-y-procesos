@@ -3,6 +3,7 @@ package org.example.carreraRelevos;
 public class Carrera {
 
     private static Carrera instance = null;
+    private int turnoActual=1;
 
     private Carrera(){
 
@@ -22,24 +23,24 @@ public class Carrera {
     }
 
 
-    public synchronized void correr(int dorsal) {
+    public synchronized void esperarRelevo(int dorsal) {
 
 
-
-        System.out.println("Corriendo corredor número: " + dorsal);
-        try {
-            Thread.sleep(2000);  // Simula el tiempo de correr
-
-        } catch (InterruptedException ex) {
-            System.out.println(ex);
+        while(dorsal!=turnoActual){
+            try {
+                this.wait();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
-        System.out.println("Dorsal " + dorsal + " ha terminado de correr");
-        avisar();
+
+
     }
 
     public synchronized void avisar() {
-        System.out.println("Avisando a un hilo para que corra");
-        notify();  // Notifica a uno de los hilos en espera
+        System.out.println("Pasamos relevo");
+        turnoActual++;
+        notifyAll();  // Notifica a uno de los hilos en espera
     }
 
 }

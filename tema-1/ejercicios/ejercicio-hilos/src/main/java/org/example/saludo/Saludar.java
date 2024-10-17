@@ -27,7 +27,7 @@ public class Saludar {
 
         //El wait solo funciona dentro de un try catch
         try{
-           wait();
+           this.wait();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
