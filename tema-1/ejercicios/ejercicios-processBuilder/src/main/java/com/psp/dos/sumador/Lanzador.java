@@ -48,20 +48,7 @@ public class Lanzador {
             throw e;
         }
 
-        //Si todo fue ok leer datos de salida del proceso
-        //O se redireciona la salida o se lee aqu�
-//        if (exitValue == 0) {
-//        	// Mostramos caracter a caracter la salida generada por Sumador
-//     		try (InputStream is = process.getInputStream()) {
-//     			int c;
-//     			while ((c = is.read()) != -1) {
-//     				System.out.print((char) c);
-//     			}
-//     		} catch (IOException e) {
-//     			e.printStackTrace();
-//     			throw e;
-//     		}
-//        }
+
     }
 
 

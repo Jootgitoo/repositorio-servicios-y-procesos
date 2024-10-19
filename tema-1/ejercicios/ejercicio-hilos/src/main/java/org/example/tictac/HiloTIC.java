@@ -11,7 +11,8 @@ package org.example.tictac;
  *
  */
 public class HiloTIC extends Thread {
-	
+
+
 	@Override
 	public void run() {
 		while(true) {
@@ -22,7 +23,8 @@ public class HiloTIC extends Thread {
 				e.printStackTrace();
 			}
 
+        }
 
-		}
-	}
+
+    }
 }

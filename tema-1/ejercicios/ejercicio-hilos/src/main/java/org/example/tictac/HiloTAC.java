@@ -11,21 +11,25 @@ package org.example.tictac;
  *
  */
 public class HiloTAC extends Thread {
-	
+
+	private boolean meToca = false;
+
 	@Override
 	public void run() {
-		if(true) {
-			System.out.println("TAC");
+		while(true) {
+			System.out.println("TIC");
 			try {
 				this.sleep(500);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 
-			TicTac.esperar();
-			TicTac.avisar();
-
-		} else {
+			try {
+				this.wait();
+			} catch (InterruptedException e) {
+				throw new RuntimeException(e);
+			}
+			notifyAll();
 
 		}
 	}
