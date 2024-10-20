@@ -1,7 +1,6 @@
 package org.example.tictacInterrupted;
 
-import org.example.tictac.HiloTAC;
-import org.example.tictac.HiloTIC;
+
 
 /**
  * Main hace uso de los hilos TIC TAC
@@ -12,23 +11,19 @@ import org.example.tictac.HiloTIC;
 public class UsaHiloTICTAC {
 	
 	public static void main (String[] args) {
+
+		TicTac avanzarParar = new TicTac();
 		//Creo los hilos
-		org.example.tictac.HiloTIC hTIC = new HiloTIC();
-		org.example.tictac.HiloTAC hTAC = new HiloTAC();
+		org.example.tictacInterrupted.HiloTAC hiloTaC = new HiloTAC(avanzarParar);
+		org.example.tictacInterrupted.HiloTIC hiloTic = new HiloTIC(avanzarParar);
 		
 		//los arranco
-		hTIC.start();
-		hTAC.start();
+		hiloTic.start();
+		hiloTaC.start();
 
-		try {
-			Thread.currentThread().sleep(2000);
 
-		} catch (InterruptedException e) {
-			throw new RuntimeException(e);
-		}
 
-		hTIC.interrupt();
-		hTAC.interrupt();
+
 		
 	}
 

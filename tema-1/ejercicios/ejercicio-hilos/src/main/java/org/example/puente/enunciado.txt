@@ -1,0 +1,5 @@
+Existe un puente por el que solo puede circular un vehículo.
+El puente tiene un acceso por la entrada norte y otro por la entrada sur.
+Un vehículo puede elegir entrar por una entrada u otra.
+Impedir que entren 2 vehículos a la vez en el puente usando exclusión mutua.
+Además, se debe usar el patrón Singleton para implementar el Puente. Indicar a cada vehículo un número para poder distinguirlos.

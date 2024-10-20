@@ -11,14 +11,25 @@ package org.example.tictacInterrupted;
  *
  */
 public class HiloTAC extends Thread {
+
+	TicTac ticTac;
+
+	public HiloTAC(TicTac ticTac){
+		this.ticTac = ticTac;
+	}
 	
 	@Override
 	public void run() {
 		while(!this.isInterrupted()) {
 
-			System.out.println("TAC");
 			try {
+				System.out.println("TAC");
+
 				this.sleep(500);
+
+				ticTac.avisar();
+				ticTac.esperar();
+
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

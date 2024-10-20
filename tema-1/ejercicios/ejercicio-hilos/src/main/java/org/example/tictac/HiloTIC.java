@@ -1,5 +1,6 @@
 package org.example.tictac;
 
+
 /**
  * Crear un hilo que visualice por pantalla 
  * en un bucle infinito la palabra TIC
@@ -12,8 +13,7 @@ package org.example.tictac;
  */
 public class HiloTIC extends Thread {
 
-
-	@Override
+    @Override
 	public void run() {
 		while(true) {
 			System.out.println("TIC");
