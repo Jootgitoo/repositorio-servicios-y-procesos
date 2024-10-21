@@ -12,7 +12,6 @@ import java.io.InputStream;
  */
 public class LanzadorMultiplicador {
 
-
     /**
      * Lanza proceso que ejecuta la clase java com.psp.Multiplicador, encargada de
      * realizar la multiplicaci�n de n1 y n2 Devuelve el resultado de la
@@ -28,8 +27,11 @@ public class LanzadorMultiplicador {
 
         Process process;
 
-
         try {
+
+            //. --> Directorio actual
+            //; --> Separador de rutas en windows
+            //./target/classes --> Ruta relatica al directorio donde se compilan las clases de Java
             String classPath = ".;./target/classes";
 
             // Proceso que ejecuta la clase java Multiplicador

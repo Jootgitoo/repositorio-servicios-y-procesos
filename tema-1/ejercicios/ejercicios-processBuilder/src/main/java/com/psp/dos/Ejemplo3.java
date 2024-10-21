@@ -14,7 +14,7 @@ public class Ejemplo3 {
         BufferedReader bReader=null;
         try {
             // Ejecutamos el proceso dir de forma erronea
-            p = new ProcessBuilder("CMD", "/C", "DIRR").start();
+            p = new ProcessBuilder("CMD", "/C", "DIR").start();
 
             // Mostramos linea a linea la salida genrada por DIR
             er = p.getErrorStream();

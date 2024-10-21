@@ -7,32 +7,33 @@ import java.io.InputStreamReader;
 
 public class Ejemplo4 {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         Process p;
-        InputStream in = null;
-        BufferedReader bReader=null;
+        InputStream inputStream = null;
+
         try {
-            // Ejecutamos el proceso ping
+
+            //Lanzas el proceso
             p = new ProcessBuilder("ping", "www.google.es").start();
 
-            // Mostramos linea a linea la salida generada por ping
-            in = p.getInputStream();
-            bReader = new BufferedReader(new InputStreamReader(in));
-            String linea=null;
-            while( (linea = bReader.readLine()) != null) {
-                System.out.println(" >"+linea);
+            //Guardas la salida --> UN PROCESO SIEMPRE DEVUELVE UN INPUTSTREAM
+            inputStream = p.getInputStream();
+
+            //Escribes la salida caracter a caracater
+            int c;
+            while ( (c = inputStream.read()) != -1 ){
+                System.out.print( (char) c);
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
-            throw e;
+            throw new RuntimeException(e);
         } finally {
-            if (null != bReader) {
-                bReader.close();
-            }
-            if (null != in) {
-                in.close();
+            try {
+                inputStream.close();
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
     }
