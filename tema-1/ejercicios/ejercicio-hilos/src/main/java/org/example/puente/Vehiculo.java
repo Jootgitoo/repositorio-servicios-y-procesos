@@ -2,37 +2,23 @@ package org.example.puente;
 
 public class Vehiculo extends Thread{
 
-    //ATRIBUTOS
-    private int numeroVehiculo;
+    private String sitioEntrada;
+    private int idVehiculo;
     private Puente puente;
 
-//-----------------------------------------------------------------------------
-    //CONSTRUCTOR
+    public Vehiculo(String sitioEntrada, int idVehiculo){
 
-    public Vehiculo (int numeroVehiculo){
-        this.numeroVehiculo = numeroVehiculo;
+        this.sitioEntrada = sitioEntrada;
+        this.idVehiculo = idVehiculo;
         puente = Puente.getInstance();
     }
 
-//-----------------------------------------------------------------------------
-    //MÉTODOS
 
     @Override
     public void run(){
-        puente.puedePasar(numeroVehiculo);
 
-        System.out.println("Vehículo " +numeroVehiculo+ " pasando el puente");
-
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-        System.out.println( numeroVehiculo + " saliendo del puente");
-        System.out.println();
-
-        puente.avisar();
-
+        puente.pasoVehiculos(sitioEntrada, idVehiculo);
     }
+
+
 }
