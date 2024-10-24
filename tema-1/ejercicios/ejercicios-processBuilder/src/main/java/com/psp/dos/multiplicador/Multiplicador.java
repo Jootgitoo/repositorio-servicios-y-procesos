@@ -16,8 +16,8 @@ public class Multiplicador {
      * @return int (n1 * n2)
      */
     public static int multiplicar(int n1, int n2) {
-        return (n1 * n2);
-    }
+            return (n1 * n2);
+        }
 
     /**
      * Multiplica dos n�meros pasados como argumento y muestra por pantalla el resultado de la multiplicaci�n
@@ -34,4 +34,5 @@ public class Multiplicador {
         //Muestra por pantalla el resultado de la multiplicaci�n
         System.out.println("El resultado de multiplicar: "+n1+" * "+n2+" es: "+resultado);
     }
+
 }

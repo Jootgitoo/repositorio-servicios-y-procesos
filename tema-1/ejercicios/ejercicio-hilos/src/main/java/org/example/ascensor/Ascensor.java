@@ -7,30 +7,29 @@ public class Ascensor {
     private int pisoActual;
     private int maxPisos;
 
-    private static  Ascensor instance = null;
+    private static Ascensor instance = null;
 
-    //El constructor es privado para que no se creen varias instancias
-    private Ascensor(){
-
-    }
-
-    //De aqui hasta la siguiente marca se hace siempre igual pero obviamente poniendo el nombre que toque
-    private synchronized static void createInstance(){
-
-        if (instance == null){
-            instance = new Ascensor();
+        private Ascensor(){
         }
 
-    }
+        private synchronized static void createInstance(){
 
-    public static Ascensor getInstance(){
+            if (instance == null){
+                instance = new Ascensor();
+            }
 
-        if (instance == null){
-
-            createInstance();
         }
-        return instance;
-    }
+
+        public static Ascensor getInstance(){
+
+            if (instance == null){
+
+                createInstance();
+            }
+            return instance;
+        }
+
+
 
     /**
      * Este método te lleva del piso actual al piso destino

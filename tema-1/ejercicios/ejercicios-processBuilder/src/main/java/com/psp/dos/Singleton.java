@@ -27,4 +27,7 @@ public class Singleton {
     public static int getInstaciasConcurrentes(){
         return numInstancias;
     }
+
+
+
 }
