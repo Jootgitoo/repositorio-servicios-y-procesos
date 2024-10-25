@@ -35,4 +35,7 @@ public class Multiplicador {
         System.out.println("El resultado de multiplicar: "+n1+" * "+n2+" es: "+resultado);
     }
 
+
+
+
 }
