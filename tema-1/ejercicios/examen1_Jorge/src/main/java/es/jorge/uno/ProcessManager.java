@@ -23,7 +23,12 @@ public class ProcessManager {
 
             process = pb.start();
 
-
+            int exitValue = process.waitFor();
+            if(exitValue == 0){
+                System.out.println("El proceso termino correctamente");
+            } else {
+                System.out.println("Error: " );
+            }
 
 
 
@@ -31,6 +36,8 @@ public class ProcessManager {
             throw new RuntimeException(e);
 
 
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
 
     }
