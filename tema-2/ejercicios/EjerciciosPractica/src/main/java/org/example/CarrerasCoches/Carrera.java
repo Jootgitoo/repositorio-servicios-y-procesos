@@ -32,16 +32,13 @@ public class Carrera {
         Random random = new Random();
         this.longitudCarrera = random.nextInt(1001) +1; //Saca un numero aleatorio entre el 1 y el 1000
 
+        System.out.println("Longitud de la carrera: " +this.longitudCarrera);
+
     }
 
-    public void comprobarGanador(Coche coche){
 
-        if(this.longitudCarrera < coche.getNumeroMetrosActual()){
-            System.out.println("Ha ganado el coche: " + coche.getNombre());
-        } else {
-
-        }
-
+    public int getLongitudCarrera() {
+        return longitudCarrera;
     }
 }
 
