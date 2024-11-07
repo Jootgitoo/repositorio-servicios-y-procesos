@@ -5,46 +5,36 @@ import java.util.Random;
 public class Coche extends Thread{
 
     private String nombre;
-    private int numeroMetrosActual;
+    private int distanciaRecorrida;
+    private int metrosAvance;
 
 
     Carrera carrera;
 
     public Coche(String nombreCche){
         this.nombre = nombreCche;
-        this.numeroMetrosActual = 0;
+        this.distanciaRecorrida = 0;
+        this.metrosAvance = 0;
+        carrera = Carrera.getInstance();
 
     }
 
-    public synchronized int avanzaCoche() throws InterruptedException {
-
-
+    public void metrosAvanza(){
         Random random = new Random();
-        this.numeroMetrosActual = numeroMetrosActual + random.nextInt(51) +1; //Saca un numero aleatorio entre el 1 y el 50
-        Thread.sleep(1000);
-        return numeroMetrosActual;
-    }
-
-    public synchronized void comprobarGanador()
-    {
-
-        if(carrera.getLongitudCarrera() < this.numeroMetrosActual){
-            System.out.println("El coche " + this.nombre + "ha ganado la carrera");
-        } else {
-
-            int distanciaRecorrida = ( (this.numeroMetrosActual * 100) / carrera.getLongitudCarrera());
-            System.out.println("El coche " + this.nombre + "lleva recorrida el " +distanciaRecorrida+ "% de la distancia");
-
-        }
+        this.metrosAvance = random.nextInt(51) +1; //Saca un numero aleatorio entre el 1 y el 50
+        System.out.println("El coche " +this.nombre + "ha avanzado: " +this.metrosAvance+" metros");
 
     }
+
 
     @Override
     public void run(){
         try {
-            carrera.longitudCarrera();
-            avanzaCoche();
-            comprobarGanador();
+            metrosAvanza();
+            while (!carrera.getCarreraFinalizada()){
+               carrera.avanzaCoche(this.distanciaRecorrida,  this.nombre);
+
+            }
 
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
@@ -52,4 +42,12 @@ public class Coche extends Thread{
 
     }
 
+
+    public void setDistanciaRecorrida(int distanciaRecorrida) {
+        this.distanciaRecorrida = distanciaRecorrida;
+    }
+
+    public int getDistanciaRecorrida() {
+        return distanciaRecorrida;
+    }
 }

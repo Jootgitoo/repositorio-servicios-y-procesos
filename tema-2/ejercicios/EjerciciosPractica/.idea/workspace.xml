@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="367ffe2e-3e11-4288-97c3-ef72df061418" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CarrerasCoches/Principal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../tema-1/ejercicios/ejercicio-hilos/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../tema-1/ejercicios/ejercicio-hilos/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../tema-1/ejercicios/ejercicios-processBuilder/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../tema-1/ejercicios/ejercicios-processBuilder/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarrerasCoches/Carrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarrerasCoches/Carrera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarrerasCoches/Coche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarrerasCoches/Coche.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarrerasCoches/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarrerasCoches/Principal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +41,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/dam-2/programacion-servicios-procesos/repositorio-servicios-y-procesos/tema-1/ejercicios/ejercicio-hilos",
+    "last_opened_file_path": "C:/dam-2/programacion-servicios-procesos/repositorio-servicios-y-procesos/tema-1/ejercicios/ejercicio-hilos",
     "onboarding.tips.debug.path": "C:/dam-2/programacion-servicios-procesos/repositorio-servicios-y-procesos/tema-2/ejercicios/EjerciciosPractica/src/main/java/org/example/Main.java"
   }
 }]]></component>
@@ -56,6 +55,17 @@
       <updated>1730898361818</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

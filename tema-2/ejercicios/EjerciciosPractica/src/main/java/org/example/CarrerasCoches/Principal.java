@@ -6,6 +6,8 @@ public class Principal {
         Coche c2 = new Coche("Ford");
         Coche c3 = new Coche("Seat");
 
+
+
         c1.start();
         c2.start();
         c3.start();
