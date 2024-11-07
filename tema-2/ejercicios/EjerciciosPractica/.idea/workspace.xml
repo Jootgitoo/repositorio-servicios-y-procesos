@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="367ffe2e-3e11-4288-97c3-ef72df061418" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Banco/Banco.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Banco/Cobra.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Banco/Cuenta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Banco/Ingresa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../tema-1/ejercicios/ejercicio-hilos/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../tema-1/ejercicios/ejercicio-hilos/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -37,12 +41,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Banco.executor": "Run",
     "Application.Principal.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/dam-2/programacion-servicios-procesos/repositorio-servicios-y-procesos/tema-1/ejercicios/ejercicio-hilos",
-    "onboarding.tips.debug.path": "C:/dam-2/programacion-servicios-procesos/repositorio-servicios-y-procesos/tema-2/ejercicios/EjerciciosPractica/src/main/java/org/example/Main.java"
+    "last_opened_file_path": "D:/dam-2/programacion-servicios-procesos/repositorio-servicios-y-procesos/tema-2/ejercicios/EjerciciosPractica",
+    "onboarding.tips.debug.path": "C:/dam-2/programacion-servicios-procesos/repositorio-servicios-y-procesos/tema-2/ejercicios/EjerciciosPractica/src/main/java/org/example/Main.java",
+    "settings.editor.selected.configurable": "settings.sync"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

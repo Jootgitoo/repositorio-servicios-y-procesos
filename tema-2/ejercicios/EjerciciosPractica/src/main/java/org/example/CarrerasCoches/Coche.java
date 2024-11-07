@@ -22,8 +22,12 @@ public class Coche extends Thread{
     public void metrosAvanza(){
         Random random = new Random();
         this.metrosAvance = random.nextInt(51) +1; //Saca un numero aleatorio entre el 1 y el 50
-        System.out.println("El coche " +this.nombre + "ha avanzado: " +this.metrosAvance+" metros");
-
+        System.out.println("El coche " +this.nombre + " ha avanzado: " +this.metrosAvance+" metros");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
@@ -32,22 +36,15 @@ public class Coche extends Thread{
         try {
             metrosAvanza();
             while (!carrera.getCarreraFinalizada()){
-               carrera.avanzaCoche(this.distanciaRecorrida,  this.nombre);
-
+                carrera.comprobarGanador(this.distanciaRecorrida,  this.nombre);
+                this.distanciaRecorrida = this.distanciaRecorrida + this.metrosAvance;
+                Thread.sleep(1000);
             }
 
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
     }
 
-
-    public void setDistanciaRecorrida(int distanciaRecorrida) {
-        this.distanciaRecorrida = distanciaRecorrida;
-    }
-
-    public int getDistanciaRecorrida() {
-        return distanciaRecorrida;
-    }
 }

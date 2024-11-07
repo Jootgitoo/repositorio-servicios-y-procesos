@@ -6,11 +6,18 @@ public class Principal {
         Coche c2 = new Coche("Ford");
         Coche c3 = new Coche("Seat");
 
-
-
         c1.start();
         c2.start();
         c3.start();
+
+        try {
+            c1.join();
+            c2.join();
+            c3.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
 }

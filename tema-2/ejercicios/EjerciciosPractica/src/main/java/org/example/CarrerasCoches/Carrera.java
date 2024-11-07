@@ -42,32 +42,24 @@ public class Carrera {
     }
 
 
-    public synchronized void avanzaCoche(int distanciaRecorrida, String nombreCoche) throws InterruptedException {
 
-
-            comprobarGanador(distanciaRecorrida, nombreCoche);
-            Thread.sleep(1000);
-
-
-    }
 
     public synchronized void comprobarGanador(int distanciaRecorrida, String nombreCoche)
     {
 
         if(distanciaRecorrida > this.longitudCarrera){
             carreraFinalizada = true;
-            System.out.println("El coche " + nombreCoche + "ha ganado la carrera");
+            System.out.println("El coche " + nombreCoche + " ha ganado la carrera");
+
 
         } else {
 
             int porcentajeRecorrido = ( (distanciaRecorrida * 100) / this.longitudCarrera);
-            System.out.println("El coche " + nombreCoche + "lleva recorrida el " +porcentajeRecorrido+ "% de la distancia");
+            System.out.println("El coche " + nombreCoche + " lleva recorrida el " +porcentajeRecorrido+ "% de la distancia");
 
         }
 
-
     }
-
 
 }
 
