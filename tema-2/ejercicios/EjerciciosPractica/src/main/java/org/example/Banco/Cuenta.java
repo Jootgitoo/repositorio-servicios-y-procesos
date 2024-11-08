@@ -23,20 +23,28 @@ public class Cuenta {
         return instance;
     }
 
-    public synchronized void ingresar(){
-        if(dineroCuenta < 5000){
+    public synchronized boolean ingresar(){
+        boolean ingresa;
+        if(dineroCuenta <= 4500){
             dineroCuenta += 500;
+            ingresa = true;
             System.out.println("Has ingresado dinero. Dinero actual de la cuenta " + dineroCuenta);
-
+        } else {
+            ingresa = false;
         }
+        return ingresa;
     }
 
-    public synchronized void retirar(Cobra cobra){
+    public synchronized boolean retirar(){
+        boolean retira;
         if(dineroCuenta > 300){
             dineroCuenta-=300;
-            cobra.setDineroRetirado( cobra.getDineroRetirado() + 300 );
             System.out.println("Has retirado dinero. Dinero actual de la cuenta " + dineroCuenta);
-
+            retira = false;
+        } else{
+            retira = true;
         }
+        return retira;
+
     }
 }

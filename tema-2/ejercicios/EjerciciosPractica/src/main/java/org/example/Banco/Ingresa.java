@@ -15,15 +15,19 @@ public class Ingresa extends Thread{
     @Override
     public void run (){
         while (contador < 90){
-            cuenta.ingresar();
-            contador+= 2;
+            if (cuenta.ingresar()) {
+                aumnentarContador();
+            }
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+                e.printStackTrace();            }
         }
 
+    }
+
+    private void aumnentarContador(){
+        this.contador += 2;
     }
 
 }

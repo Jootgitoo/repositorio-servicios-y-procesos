@@ -5,6 +5,7 @@ import org.example.CarrerasCoches.Carrera;
 public class Cobra extends Thread{
 
     private int dineroRetirado = 0;
+
     private Cuenta cuenta;
 
     public Cobra(){
@@ -12,24 +13,23 @@ public class Cobra extends Thread{
     }
 
     @Override
-    public void run (){
-        while (dineroRetirado < 6000){
-            cuenta.retirar(this);
+    public void run () {
+        while (dineroRetirado < 6000) {
 
+            if(cuenta.retirar()) {
+                incrementar();
+            }
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
         }
 
     }
 
-    public int getDineroRetirado() {
-        return dineroRetirado;
+    private void incrementar(){
+        this.dineroRetirado += 300;
     }
 
-    public void setDineroRetirado(int dineroRetirado) {
-        this.dineroRetirado = dineroRetirado;
-    }
 }

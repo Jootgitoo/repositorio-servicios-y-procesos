@@ -5,21 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="367ffe2e-3e11-4288-97c3-ef72df061418" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Banco/Banco.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Banco/Cobra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Banco/Cuenta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Banco/Ingresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../tema-1/ejercicios/ejercicio-hilos/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../tema-1/ejercicios/ejercicio-hilos/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarrerasCoches/Carrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarrerasCoches/Carrera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarrerasCoches/Coche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarrerasCoches/Coche.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CarrerasCoches/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CarrerasCoches/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Banco/Banco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Banco/Banco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Banco/Cobra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Banco/Cobra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Banco/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Banco/Cuenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Banco/Ingresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Banco/Ingresa.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -30,6 +30,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -43,10 +49,12 @@
   "keyToString": {
     "Application.Banco.executor": "Run",
     "Application.Principal.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/dam-2/programacion-servicios-procesos/repositorio-servicios-y-procesos/tema-2/ejercicios/EjerciciosPractica",
+    "last_opened_file_path": "C:/dam-2/programacion-servicios-procesos/repositorio-servicios-y-procesos/tema-1/ejercicios/ejercicio-hilos",
     "onboarding.tips.debug.path": "C:/dam-2/programacion-servicios-procesos/repositorio-servicios-y-procesos/tema-2/ejercicios/EjerciciosPractica/src/main/java/org/example/Main.java",
     "settings.editor.selected.configurable": "settings.sync"
   }
