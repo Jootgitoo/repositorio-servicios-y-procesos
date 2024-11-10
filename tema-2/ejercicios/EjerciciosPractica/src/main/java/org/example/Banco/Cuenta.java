@@ -2,7 +2,7 @@ package org.example.Banco;
 
 public class Cuenta {
 
-    private int dineroCuenta;
+    private int dineroCuenta = 0;
 
     private static Cuenta instance = null;
 
@@ -40,9 +40,9 @@ public class Cuenta {
         if(dineroCuenta > 300){
             dineroCuenta-=300;
             System.out.println("Has retirado dinero. Dinero actual de la cuenta " + dineroCuenta);
-            retira = false;
-        } else{
             retira = true;
+        } else{
+            retira = false;
         }
         return retira;
 

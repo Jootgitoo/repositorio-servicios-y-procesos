@@ -28,6 +28,7 @@ public class Ingresa extends Thread{
 
     private void aumnentarContador(){
         this.contador += 2;
+        System.out.println("En total has dormido "+this.contador+ " sgundos");
     }
 
 }

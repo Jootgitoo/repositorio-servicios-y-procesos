@@ -15,7 +15,6 @@ public class Cobra extends Thread{
     @Override
     public void run () {
         while (dineroRetirado < 6000) {
-
             if(cuenta.retirar()) {
                 incrementar();
             }
@@ -30,6 +29,7 @@ public class Cobra extends Thread{
 
     private void incrementar(){
         this.dineroRetirado += 300;
+        System.out.println("En total has retirado " +this.dineroRetirado);
     }
 
 }
