@@ -10,6 +10,7 @@ public class Cobra extends Thread{
 
     public Cobra(){
         cuenta = Cuenta.getInstance();
+        this.dineroRetirado = 0;
     }
 
     @Override
