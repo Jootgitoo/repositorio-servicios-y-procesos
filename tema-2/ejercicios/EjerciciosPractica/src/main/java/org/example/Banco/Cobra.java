@@ -18,6 +18,7 @@ public class Cobra extends Thread{
         while (dineroRetirado < 6000) {
             if(cuenta.retirar()) {
                 incrementar();
+                comprobarDineroRetirado();
             }
             try {
                 Thread.sleep(3000);
@@ -31,6 +32,16 @@ public class Cobra extends Thread{
     private void incrementar(){
         this.dineroRetirado += 300;
         System.out.println("En total has retirado " +this.dineroRetirado);
+        System.out.println("");
+
+
+    }
+
+    private void comprobarDineroRetirado(){
+        if (this.dineroRetirado >= 6000){
+            System.out.println("Como hemos retirado 6000 termina el programa");
+            System.exit(0);
+        }
     }
 
 }

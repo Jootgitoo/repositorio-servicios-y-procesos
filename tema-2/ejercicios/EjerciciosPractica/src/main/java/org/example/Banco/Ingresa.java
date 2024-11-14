@@ -1,11 +1,9 @@
 package org.example.Banco;
 
-import org.example.CarrerasCoches.Carrera;
-
 public class Ingresa extends Thread{
 
     private Cuenta cuenta;
-    int contador = 0;
+    int segundosDormidosActuales = 0;
 
     public Ingresa(){
         cuenta = Cuenta.getInstance();
@@ -14,9 +12,10 @@ public class Ingresa extends Thread{
 
     @Override
     public void run (){
-        while (contador < 90){
+        while (this.segundosDormidosActuales < 90){
             if (cuenta.ingresar()) {
                 aumnentarContador();
+                comprobarSegundosDormidos();
             }
             try {
                 Thread.sleep(2000);
@@ -27,8 +26,16 @@ public class Ingresa extends Thread{
     }
 
     private void aumnentarContador(){
-        this.contador += 2;
-        System.out.println("En total has dormido "+this.contador+ " sgundos");
+        this.segundosDormidosActuales += 2;
+        System.out.println("En total has dormido "+this.segundosDormidosActuales + " sgundos");
+        System.out.println("");
+    }
+
+    private void comprobarSegundosDormidos(){
+        if (this.segundosDormidosActuales >= 90){
+            System.out.println("Como hemos dormido 90 segundos termina el programa");
+            System.exit(0);
+        }
     }
 
 }
