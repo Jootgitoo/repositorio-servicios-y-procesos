@@ -1,4 +1,4 @@
-package org.example.Constructora;
+package org.example.Fabrica;
 
 public class Constructora {
     public static void main(String[] args) throws InterruptedException {

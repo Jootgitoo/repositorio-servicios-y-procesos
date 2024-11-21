@@ -1,9 +1,6 @@
 package org.example.JugadorArbitro;
 
-import org.example.Constructora.Almacen;
-
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Arbitro {
 

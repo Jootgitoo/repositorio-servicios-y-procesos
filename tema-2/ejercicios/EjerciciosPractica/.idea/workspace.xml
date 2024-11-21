@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="367ffe2e-3e11-4288-97c3-ef72df061418" name="Changes" comment="" />
+    <list default="true" id="367ffe2e-3e11-4288-97c3-ef72df061418" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Barbero/Barberia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Barbero/Barbero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Barbero/Clientes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Barbero/Sillas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Constructora/Almacen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Fabrica/Almacen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Constructora/Constructora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Fabrica/Constructora.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Constructora/Fabrica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Fabrica/Fabrica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Constructora/Obras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Fabrica/Obras.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Constructora/enunciado.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Fabrica/enunciado.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/JugadorArbitro/Arbitro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/JugadorArbitro/Arbitro.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,22 +50,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Banco.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Constructora.executor&quot;: &quot;Run&quot;,
-    &quot;Application.IniciarJuego.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Principal.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/dam-2/programacion-servicios-procesos/repositorio-servicios-y-procesos/tema-2/ejercicios/EjerciciosPractica&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/dam-2/programacion-servicios-procesos/repositorio-servicios-y-procesos/tema-2/ejercicios/EjerciciosPractica/src/main/java/org/example/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Banco.executor": "Run",
+    "Application.Barberia.executor": "Run",
+    "Application.Constructora.executor": "Run",
+    "Application.IniciarJuego.executor": "Run",
+    "Application.Principal.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/dam-2/programacion-servicios-procesos/repositorio-servicios-y-procesos/tema-2/ejercicios/EjerciciosPractica",
+    "onboarding.tips.debug.path": "C:/dam-2/programacion-servicios-procesos/repositorio-servicios-y-procesos/tema-2/ejercicios/EjerciciosPractica/src/main/java/org/example/Main.java",
+    "settings.editor.selected.configurable": "editing.templates"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -84,7 +98,7 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Constructora/Fabrica.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Fabrica/Fabrica.java</url>
           <line>19</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
