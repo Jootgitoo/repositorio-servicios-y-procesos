@@ -12,7 +12,7 @@ public class Barbero extends Thread{
 
     @Override
     public void run(){
-        sillas.cortarPelo(this.id);
+        this.sillas.cortarPelo(this.id);
     }
 
 }

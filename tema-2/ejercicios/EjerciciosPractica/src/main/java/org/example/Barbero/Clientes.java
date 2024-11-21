@@ -15,6 +15,8 @@ public class Clientes extends Thread{
 
         try {
             sillas.elegirSilla(this.id);
+
+
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

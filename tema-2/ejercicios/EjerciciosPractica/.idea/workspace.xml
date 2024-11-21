@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="367ffe2e-3e11-4288-97c3-ef72df061418" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Barbero/Barberia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Barbero/Barbero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Barbero/Clientes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Barbero/Sillas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Filosofos/Cubiertos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Constructora/Almacen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Fabrica/Almacen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Constructora/Constructora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Fabrica/Constructora.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Constructora/Fabrica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Fabrica/Fabrica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Constructora/Obras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Fabrica/Obras.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Constructora/enunciado.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Fabrica/enunciado.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/JugadorArbitro/Arbitro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/JugadorArbitro/Arbitro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Barbero/Barbero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Barbero/Barbero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Barbero/Clientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Barbero/Clientes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Barbero/Sillas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Barbero/Sillas.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
