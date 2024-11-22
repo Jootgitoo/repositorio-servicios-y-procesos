@@ -15,12 +15,15 @@ public class ProducirNumero extends Thread{
 
     @Override
     public void run() {
+        while (true){
+            int numero = crearNumero();
 
-        int numero = crearNumero();
-        try {
-            colaNumeros.addNumero(numero);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            try {
+                colaNumeros.addNumero(numero);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
+
     }
 }

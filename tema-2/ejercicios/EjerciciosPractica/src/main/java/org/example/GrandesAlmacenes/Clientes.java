@@ -20,13 +20,13 @@ public class Clientes extends Thread {
     public void run(){
 
         intentos++;
-        this.entrado = puerta.entrar();
+        this.entrado = puerta.entrar(this.id);
 
         if (entrado){
             puerta.cogerProducto(this.id);
         } else {
             intentos++;
-            this.entrado = puerta.entrar();
+            this.entrado = puerta.entrar(this.id);
 
         }
 

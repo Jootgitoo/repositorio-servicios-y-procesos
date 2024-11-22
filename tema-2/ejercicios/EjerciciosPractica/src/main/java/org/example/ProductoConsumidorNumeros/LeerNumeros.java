@@ -11,12 +11,14 @@ public class LeerNumeros extends Thread {
 
     @Override
     public void run(){
-
-        try {
-            colaNumeros.leerNumero();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        while (true){
+            try {
+                colaNumeros.leerNumero();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
+
 
     }
 }
