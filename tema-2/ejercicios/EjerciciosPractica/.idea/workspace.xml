@@ -7,10 +7,6 @@
     <list default="true" id="367ffe2e-3e11-4288-97c3-ef72df061418" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GrandesAlmacenes/Clientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GrandesAlmacenes/Clientes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ProductoConsumidorNumeros/EjecutarHilo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ProductoConsumidorNumeros/EjecutarHilo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ProductoConsumidorNumeros/LeerNumeros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ProductoConsumidorNumeros/LeerNumeros.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ProductoConsumidorNumeros/ProducirNumero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ProductoConsumidorNumeros/ProducirNumero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
