@@ -12,7 +12,16 @@ public class Barbero extends Thread{
 
     @Override
     public void run(){
-        this.sillas.cortarPelo(this.id);
+
+        while (sillas.getContadorSillasOcupadas() > 0){
+            try {
+                this.sillas.cortarPelo(this.id);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+
     }
 
 }

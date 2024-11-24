@@ -41,9 +41,6 @@ public class Carrera {
         return carreraFinalizada;
     }
 
-
-
-
     public synchronized void comprobarGanador(int distanciaRecorrida, String nombreCoche)
     {
 

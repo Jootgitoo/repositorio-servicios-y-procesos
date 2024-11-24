@@ -25,14 +25,18 @@ public class Ring {
      }
 
 
-     private int establecerRival (){
-        int numero = (int) (Math.random() * 4) + 1;
-        return numero;
+     public synchronized boolean luchar(){
+
+         if(numeroCombates < 10) {
+             numeroCombates++;
+            return true;
+         } else {
+            return false;
+         }
      }
 
-     private void incrementarCombate(){
-         numeroCombates++;
-     }
+
+
 
 
 }

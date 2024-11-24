@@ -2,28 +2,27 @@ package org.example.ProductoConsumidorNumeros;
 
 public class ProducirNumero extends Thread{
 
+    int numero;
     ColaNumeros colaNumeros;
-
     public ProducirNumero(){
         colaNumeros = ColaNumeros.getInstance();
+        this.numero = (int) (Math.random() * 10) + 1;
     }
 
-    public int crearNumero(){
-        int numero = (int) (Math.random() * 10) + 1;
-        return numero;
-    }
 
     @Override
-    public void run() {
+    public void run(){
         while (true){
-            int numero = crearNumero();
-
-            try {
-                colaNumeros.addNumero(numero);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+            if (!colaNumeros.addNumero(this.numero)){
+                try {
+                    Thread.sleep(3000);
+                    colaNumeros.addNumero(this.numero);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
 
     }
+
 }

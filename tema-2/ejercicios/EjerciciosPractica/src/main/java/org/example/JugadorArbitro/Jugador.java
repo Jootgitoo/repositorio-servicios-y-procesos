@@ -14,8 +14,11 @@ public class Jugador extends Thread{
     public void run(){
         arbitro.numeroJugadores(this);
 
-        while (!arbitro.adivinaNumero(this.id)){
+        boolean numeroAdivinado = false;
+        while (!numeroAdivinado){
+            numeroAdivinado = arbitro.adivinaNumero(this.id);
             try {
+
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();

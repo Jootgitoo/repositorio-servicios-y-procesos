@@ -3,8 +3,12 @@ package org.example.Barbero;
 public class Sillas {
 
     int contadorSillasOcupadas = 0;
-    private final static int SILLAS_MAXIMO = 10;
+    private final static int NUMERO_SILLAS_MAXIMO = 10;
     private static Sillas instance = null;
+
+    public int getContadorSillasOcupadas() {
+        return contadorSillasOcupadas;
+    }
 
     private Sillas(){
     }
@@ -27,21 +31,24 @@ public class Sillas {
     }
 
     public synchronized void elegirSilla(int idCLiente) throws InterruptedException {
-        if (contadorSillasOcupadas < 10){
+        if (contadorSillasOcupadas < NUMERO_SILLAS_MAXIMO){
             contadorSillasOcupadas++;
-            System.out.println("Cliente "+idCLiente+ " ha encontrado la silla " +contadorSillasOcupadas);
-            Thread.sleep(250);
+            System.out.println("Cliente "+idCLiente+ ": Ha encontrado la silla " +contadorSillasOcupadas);
+
         } else {
-            Thread.interrupted();
-            System.out.println("Cliente " +idCLiente+ " me marcho, no hay sillas libres");
-            
+            System.out.println("Cliente " +idCLiente+ ": Me marcho, no hay sillas libres");
+            Thread.currentThread().interrupt();
         }
     }
 
-    public synchronized void cortarPelo(int idBarbero){
+    public synchronized void cortarPelo(int idBarbero) throws InterruptedException{
 
-        System.out.println("Barbero: " +idBarbero +"cortando el pelo...");
-        System.out.println("El cliente se va");
-        contadorSillasOcupadas--;
+        if (contadorSillasOcupadas > 0) {
+            System.out.println("Barbero: " + idBarbero + " cortando el pelo...");
+            Thread.sleep(250);
+            System.out.println("El cliente se va");
+            contadorSillasOcupadas--;
+        }
+
     }
 }

@@ -10,6 +10,7 @@ public class IniciarJuego {
         j1.start();
         j2.start();
         j3.start();
+        System.out.println("");
 
         try {
             j1.join();

@@ -1,15 +1,15 @@
 package org.example.ProductoConsumidorNumeros;
 
+import java.util.LinkedList;
+
 public class ColaNumeros {
 
-    private static final int SIZE_MAX_LIST = 10;
+    LinkedList<Integer> listaNumeros = new LinkedList<Integer>();
 
-    private int[] listaNumeros = new int[SIZE_MAX_LIST];
-
-    private static ColaNumeros instance = null;
+     private static ColaNumeros instance = null;
 
      private ColaNumeros(){
-
+         rellenarLista();
      }
 
      private synchronized static void createIntance(){
@@ -25,59 +25,43 @@ public class ColaNumeros {
          return instance;
      }
 
-    public synchronized void addNumero(int numero) throws InterruptedException {
-         boolean vacia = false;
-         int ultimaPosicionVacia = 0;
+     private void rellenarLista(){
+         for(int i=0; i<10; i++){
+             int numero = -1;
+             listaNumeros.add(numero);
+         }
+     }
 
-         for (int i=0; i< listaNumeros.length; i++){
-            if (listaNumeros[i] == 0){
-                vacia = true;
-                ultimaPosicionVacia = i;
-            } else {
-                vacia = false;
-            }
-        }
+    public boolean addNumero(int numero){
+         boolean huecoLibre = false;
 
-        if (vacia){
-
-            listaNumeros[ultimaPosicionVacia] = numero;
-
-        } else {
-            System.out.println("No se ha podido añadir ningún numero");
-            Thread.sleep(1000);
-            addNumero(numero);
-
-        }
-
-    }
-
-    public synchronized void leerNumero() throws InterruptedException {
-
-        boolean vacia = false;
-        int primerNumero = 0;
-
-        //Examino si la cola está vacia
-         for (int i=0; i<listaNumeros.length; i++){
-            if (listaNumeros[i] == 0){
-                vacia = true;
-                System.out.println("No se ha podido leer ningún numero por que la cola está vacia");
-
-            } else {
-                vacia = false;
-                if (primerNumero == 0){
-                    primerNumero = listaNumeros[i];
-                    listaNumeros[i] = 0;
+         for (int i=0; i<listaNumeros.size() && huecoLibre == false; i++){
+            if (listaNumeros.get(i) == -1){
+                huecoLibre = true;
+                listaNumeros.set(i, numero);
+                System.out.println("Numero: " +numero+ " introducido con exito");
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
                 }
             }
          }
+         return huecoLibre;
+    }
 
-         if(vacia){
-             Thread.sleep(2000);
-         } else {
-             System.out.println("Numero leido: " +primerNumero);
+    public int leerNumero(){
+         boolean estaVacia = true;
+         int numero = -1;
+         for (int i=0; i<listaNumeros.size(); i++){
+             if (listaNumeros.get(i) != -1){
+                 estaVacia = false;
+                 numero = listaNumeros.get(i);
+                 listaNumeros.set(i, -1);
 
-
+             }
          }
+         return numero;
 
     }
 }
