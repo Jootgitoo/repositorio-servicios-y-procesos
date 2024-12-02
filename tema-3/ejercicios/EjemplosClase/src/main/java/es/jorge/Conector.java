@@ -1,4 +1,4 @@
-package org.example;
+package es.jorge;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -22,22 +22,19 @@ public class Conector {
         PrintWriter out = null;
         BufferedReader in = null;
         try {
-            //Abrimos un canal seguro de comunicación
-            factory = (SSLSocketFactory) SSLSocketFactory.getDefault(); //Creas objetos de la clase implementada
-            socket = (SSLSocket) factory.createSocket(url, puerto); //SSLSocket crea una comunicacion segura
+            factory = (SSLSocketFactory) SSLSocketFactory.getDefault();
+            socket = (SSLSocket) factory.createSocket(url, puerto);
 
             // Escribo peticion a google
             out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())));
-            //out.println("GET /index.html");
-            //out.println("GET /?hl=es");
-            out.println("GET /search?q=java");
+            out.println("GET /index.html");
             out.println();
-            //out.flush(); //Los ultimos datos terminan de ser enviados para asegurarnos
+            out.flush();
 
             /*
              * Comprobar que no ha ocurrido ning�n error
              */
-            if (out.checkError()) { //Este método hace el flush y si no se ha cerrado comprueba si hay una excepcion en la comunicación
+            if (out.checkError()) {
                 System.out.println("SSLSocketClient:  java.io.PrintWriter error");
             }
 
