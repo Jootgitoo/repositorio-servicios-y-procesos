@@ -19,8 +19,8 @@ public class ReceptorDatagram {
             System.out.println("Recibiendo mensaje");
 
             byte[] mensaje = new byte[25];
-            DatagramPacket datagrama1 = new DatagramPacket (mensaje,25);
-            datagramSocket.receive(datagrama1);//se bloquea hasta que recibe un mensaje
+            DatagramPacket peticion = new DatagramPacket (mensaje,25);
+            datagramSocket.receive(peticion);//se bloquea hasta que recibe un mensaje
 
             System.out.println("Mensaje recibido: " + new String(mensaje));
 

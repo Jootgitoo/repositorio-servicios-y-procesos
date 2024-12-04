@@ -17,8 +17,7 @@ public class EmisorDatagram {
             String mensaje = "mensaje desde el emisor";
 
             InetAddress addr = InetAddress.getByName("localhost");
-            DatagramPacket datagrama_ = new DatagramPacket (mensaje.getBytes(),
-                    mensaje.getBytes().length,addr,5555);
+            DatagramPacket datagrama_ = new DatagramPacket (mensaje.getBytes(), mensaje.getBytes().length,addr,5555);
 
             datagramsocket.send(datagrama_);
             System.out.println("Mensaje enviado");
