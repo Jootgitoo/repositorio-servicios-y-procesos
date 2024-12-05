@@ -7,11 +7,13 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 
+//Este es el servidor
+
 public class ReceptorDatagram {
 
     public static void main(String[] args) throws IOException {
         try {
-            System.out.println("Creando socket datagram");
+            System.out.println("Creando socket datagram (servidor)");
 
             InetSocketAddress addr = new InetSocketAddress ("localhost", 5555);
             DatagramSocket datagramSocket = new DatagramSocket(addr);

@@ -19,6 +19,7 @@ public class ServidorSocketStream {
             serverSocket.bind(addr);
             System.out.println("Aceptando conexiones");
 
+            //El servidor espera hasta que llega la coxeion del cliente
             Socket newSocket = serverSocket.accept();
 
             System.out.println("Conexión recibida");
@@ -27,14 +28,19 @@ public class ServidorSocketStream {
             OutputStream os = newSocket.getOutputStream();
 
             byte[] mensaje = new byte[25];
+
+            //Relleno el array mensje la informacion que tiene is
             is.read(mensaje);
             System.out.println("Mensaje recibido: " + new String(mensaje));
 
+            //Cierro la comunicacion con el cliente
             System.out.println("Cerrando el nuevo socket");
-
             newSocket.close();
+
+            //Cierro el servidor
             System.out.println("Cerrando el socket servidor");
             serverSocket.close();
+
             System.out.println("Terminado");
 
         } catch(IOException e) {

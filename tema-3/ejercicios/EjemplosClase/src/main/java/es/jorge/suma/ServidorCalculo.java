@@ -62,9 +62,9 @@ public class ServidorCalculo {
                     is = conexion.getInputStream();
                     isr = new InputStreamReader(is);
                     bf = new BufferedReader(isr);
-                    String linea = bf.readLine();
-                    String num1 = bf.readLine();
-                    String num2 = bf.readLine();
+                    String linea = bf.readLine(); //Operacion
+                    String num1 = bf.readLine(); //Primer numero
+                    String num2 = bf.readLine(); //Segundo numero
                     /* Calculamos el resultado */
                     Integer result = this.calcular(linea, num1, num2);
                     os = conexion.getOutputStream();

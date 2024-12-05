@@ -15,7 +15,11 @@ public class ClienteSocketStream {
             Socket clientSocket = new Socket();
             System.out.println("Estableciendo la conexión");
 
+
+            //Establezco ip y puerto a la que me quiero conectar
             InetSocketAddress addr = new InetSocketAddress ("localhost", 5555);
+
+            //Me concecto
             clientSocket.connect(addr);
 
             InputStream is = clientSocket.getInputStream();
@@ -23,6 +27,8 @@ public class ClienteSocketStream {
             System.out.println("Enviando mensaje");
 
             String mensaje = "hola clase!!\n";
+
+            //Convierto el mensaje en un bytes y lo mando
             os.write(mensaje.getBytes());
             System.out.println("mensaje enviado");
             System.out.println("Cerrando el socket cliente");
