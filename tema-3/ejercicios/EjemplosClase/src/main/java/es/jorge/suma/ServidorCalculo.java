@@ -37,9 +37,19 @@ public class ServidorCalculo {
         char simbolo = op.charAt(0);
         int num1 = this.extraerNumero(n1);
         int num2 = this.extraerNumero(n2);
+
         if (simbolo == '+') {
             resultado = num1 + num2;
-            System.out.println("Resultado suma: "+num1+" + "+num2+" = "+resultado);
+            System.out.println("Resultado suma: " + num1 + " + " + num2 + " = " + resultado);
+        } else if (simbolo == '-') {
+            resultado = num1 - num2;
+            System.out.println("Resultado resta: " + num1 + " - " + num2 + " = " + resultado);
+        } else if (simbolo == '*') {
+            resultado = num1 * num2;
+            System.out.println("Resultado multiplicacion: " + num1 + " * " + num2 + " = " + resultado);
+        } else if (simbolo == '/') {
+            resultado = num1 / num2;
+            System.out.println("Resultado division: " + num1 + " / " + num2 + " = " + resultado);
         }
         return resultado;
     }
