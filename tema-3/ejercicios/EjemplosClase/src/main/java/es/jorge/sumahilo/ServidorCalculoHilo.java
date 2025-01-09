@@ -12,7 +12,7 @@ public class ServidorCalculoHilo {
             socketEscucha = new ServerSocket(9876); //Puerto del que va a escuchar (tiene q ser el mismo que el cliente para que funcione)
             System.out.println("Arrancado el servidor");
 
-            //Buble infinito para que el servidor siempre esté escuchando y no se pare
+            //Bucle infinito para que el servidor siempre esté escuchando y no se pare
             while (true){
                 try {
                     //.accept() --> Bloquea la ejecución hasta que un cliente intenta conectarse.

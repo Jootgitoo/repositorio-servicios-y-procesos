@@ -25,16 +25,17 @@ public class ClienteCalculo {
         PrintWriter pw = null;
 
         try {
-            InetSocketAddress direccion = new InetSocketAddress("localhost", 9876); //Defino la dirección del servidor
+            //Defino la dirección del servidor
+            InetSocketAddress direccion = new InetSocketAddress("localhost", 9876);
 
             socket = new Socket(); //Inicializo el Socket
             socket.connect(direccion); //Lo conecto al servidor
 
             //Escribe la peticion al servidor --> Hablamos al servidor
             pw = new PrintWriter(socket.getOutputStream());
-            pw.print("+\n");
-            pw.print("0\n");
-            pw.print("84\n");
+            pw.print("-\n");
+            pw.print("20\n");
+            pw.print("15\n");
             pw.flush();
 
             //Lee la respuesta del servidor
