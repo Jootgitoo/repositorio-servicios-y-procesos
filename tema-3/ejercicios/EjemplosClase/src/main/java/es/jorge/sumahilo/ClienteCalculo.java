@@ -15,21 +15,29 @@ public class ClienteCalculo {
      * @throws IOException
      */
     public static void main(String[] args) throws Exception {
-        Socket socket = null;
+        Socket socket = null; //Representa la conexion con el servidor
+
+        //Se utiliza para leer los datos recibidos por el servidor
         BufferedReader bfr = null;
-        PrintWriter pw = null;
         InputStreamReader isr = null;
+
+        //Se usa para enviar datos al servidor
+        PrintWriter pw = null;
+
         try {
-            InetSocketAddress direccion = new InetSocketAddress("localhost", 9876);
-            socket = new Socket();
-            socket.connect(direccion);
-            //Escribe la peticion al servidor
+            InetSocketAddress direccion = new InetSocketAddress("localhost", 9876); //Defino la dirección del servidor
+
+            socket = new Socket(); //Inicializo el Socket
+            socket.connect(direccion); //Lo conecto al servidor
+
+            //Escribe la peticion al servidor --> Hablamos al servidor
             pw = new PrintWriter(socket.getOutputStream());
             pw.print("+\n");
             pw.print("0\n");
             pw.print("84\n");
             pw.flush();
-            //lee la respuesta del servidor
+
+            //Lee la respuesta del servidor
             isr = new InputStreamReader(socket.getInputStream());
             bfr = new BufferedReader(isr);
             String resultado = bfr.readLine();
@@ -47,6 +55,10 @@ public class ClienteCalculo {
         }
     }
 
+    /**
+     * Método para cerrar el socket
+     * @param socket Socket que vamos a cerrar
+     */
     private static void close(Closeable socket) {
         try {
             if (null != socket) {
