@@ -5,9 +5,15 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Servidor {
+
+    private static final int CANTIDAD = 100;
+    
+
     public static void main(String[] args) throws IOException {
 
         ServerSocket socketEscucha = null;
+
+
 
         try{
             //Puerto por el que va a escuchar nuestro servidor
