@@ -44,7 +44,6 @@ public class Peticion extends Thread{
         os = socket.getOutputStream();
         pw = new PrintWriter(os, true);
         pw.println(respuesta);
-        pw.flush();
         System.out.println("He respondido al cliente");
     }
 
