@@ -31,8 +31,9 @@ public class Cliente {
             //Hablamos al servidor
             pw = new PrintWriter(socket.getOutputStream());
             pw.println("50");
-            pw.println("25");
-            pw.println("25");
+            System.out.println("Peticion de 50 refrescos");
+            //pw.println("25");
+            //pw.println("25");
 
             //Recogemos la información del servidor
             isr = new InputStreamReader(socket.getInputStream());

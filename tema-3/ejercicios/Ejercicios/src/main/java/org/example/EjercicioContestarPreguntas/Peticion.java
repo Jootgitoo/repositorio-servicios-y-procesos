@@ -22,29 +22,40 @@ public class Peticion extends Thread{
 
     //Escuchamos al cliente
     public void escuchar() throws IOException {
-        InputStream is = null;
-        InputStreamReader isr = null;
-        BufferedReader bf = null;
+        InputStream is = socket.getInputStream();
+        InputStreamReader isr = new InputStreamReader(is);
+        BufferedReader bf = new BufferedReader(isr);
         OutputStream os = null;
         PrintWriter pw = null;
 
         System.out.println("Conexion con el cliente recibida!");
 
-        //Leemos lo que nos dice el cliente
-        is = socket.getInputStream();
-        isr = new InputStreamReader(is);
-        bf = new BufferedReader(isr);
+        boolean salir = false;
 
-        //Escucho la pregunta del cliente
-        String pregunta = bf.readLine();
-        System.out.println("He escuchado la pregunta del cliente");
+        while(!salir){
 
-        String respuesta = responderACliente(pregunta);
+            //Leemos la pregunta del cliente
+            String pregunta = bf.readLine();
 
-        os = socket.getOutputStream();
-        pw = new PrintWriter(os, true);
-        pw.println(respuesta);
-        System.out.println("He respondido al cliente");
+
+            //Buscamos cual es la respuesta a la pregunta
+            String respuesta = responderACliente(pregunta);
+
+            if(respuesta.equalsIgnoreCase("salir")){
+                salir = true;
+
+            }
+
+            //Respondemos al cliente
+            os = socket.getOutputStream();
+            pw = new PrintWriter(os, true);
+
+
+            pw.println(respuesta);
+            System.out.println("He respondido al cliente");
+        }
+        socket.close();
+
     }
 
     private String responderACliente(String pregunta){
@@ -53,23 +64,27 @@ public class Peticion extends Thread{
 
         switch (pregunta){
             case "¿Cual es la capital de portugal?":
-                respuesta = "Lisboa";
+                respuesta = "Lisboa \n";
             break;
 
             case "¿Quien escribio don quijote de la mancha?":
-                respuesta = "Miguel de Cervantes";
+                respuesta = "Miguel de Cervantes \n";
             break;
 
             case "¿Cual es el rio mas largo del mundo ?":
-                respuesta = "Amazonas";
+                respuesta = "Amazonas \n";
             break;
 
             case "¿En que año llegó el hombre a la luna?":
-                respuesta = "1969";
+                respuesta = "1969 \n";
             break;
 
             case "¿Cual es el idioma más hablado en el mundo?":
-                respuesta = "Chino mandarin";
+                respuesta = "Chino mandarin \n";
+            break;
+
+            case "salir":
+                respuesta = "salir \n";
             break;
 
             default:

@@ -3,6 +3,7 @@ package org.example.EjercicioContestarPreguntas;
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Cliente {
 
@@ -28,17 +29,36 @@ public class Cliente {
 
             //Hablamos al servidor
             pw = new PrintWriter(socket.getOutputStream(), true);
-            pw.println("¿Quien escribio don quijote de la mancha?");
 
-            //Recogemos la información del servidor
-            isr = new InputStreamReader(socket.getInputStream());
-            bfr = new BufferedReader(isr);
-            String resultado;
+            //Lo hacemos infinito hasta que le decimos que salga
+            boolean salir = false;
+            Scanner scanner = new Scanner(System.in);
+            while (!salir){
 
-            while( (resultado = bfr.readLine()) != null){ //Si entra, hay lineas de respuesta del servidor
-                System.out.println(resultado);
+                //Pedimos al usuario que escriba la pregunta
+
+                System.out.print("Escribe tu pregunta: ");
+                String pregunta = scanner.nextLine();
+
+                //Se la mandamos al servidor
+                pw.println(pregunta);
+
+                //Recogemos la información del servidor
+                isr = new InputStreamReader(socket.getInputStream());
+                bfr = new BufferedReader(isr);
+                String resultado;
+
+                while( (resultado = bfr.readLine()) != null){ //Si entra, hay lineas de respuesta del servidor
+                    System.out.println(resultado);
+
+                    if(resultado.equals("salir")){
+                        salir = true;
+                    }
+                }
+
+                System.out.println();
+                System.out.println();
             }
-
 
         } catch (IOException e) {
             throw new RuntimeException(e);

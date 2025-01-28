@@ -2,7 +2,6 @@ package org.example.EjercicioMaquinaRefrescos;
 
 import java.io.*;
 import java.net.Socket;
-import java.sql.SQLOutput;
 
 public class Peticion extends Thread{
 
@@ -44,20 +43,21 @@ public class Peticion extends Thread{
             String snumeroRefrescosUsuario = bf.readLine();
             int numeroRefrescosUsuario = Integer.parseInt(snumeroRefrescosUsuario);
 
+
             //OPERACIONES
             //Comprobamos si el número que ha pedido el usuario es válido
             if(numeroRefrescosUsuario >= 1 && numeroRefrescosUsuario <= 10 && numeroRefrescosUsuario < numeroRefrescos){ //Si es valido...
 
                 //Restamos los refrescos que se lleva el usuario a los que quedan en la máquina
                 numeroRefrescos -= numeroRefrescosUsuario;
-                pararServidor = false;
+
 
                 //SOLUCION --> DEVOLVEMOS AL USUARIO
                 //Devolvemos la informacion
                 os = socket.getOutputStream();
-                pw = new PrintWriter(os);
+                pw = new PrintWriter(os, true);
                 pw.write("Le damos sus refrescos: " +numeroRefrescosUsuario + "\n");
-                pw.flush();
+
 
             } else{ //Si no es valido
 
@@ -67,13 +67,11 @@ public class Peticion extends Thread{
                 //SOLUCION --> DEVOLVEMOS AL USUARIO
                 //Devolvemos la solucion al usuario
                 pw.write("No hay suficientes refrescos, le enviamos los " +numeroRefrescos+ " refrescos restantes"+ "\n");
-                pw.flush();
 
                 //Cerramos la conexion
                 pararServidor = true;
 
             }
-
             return pararServidor;
 
         } catch (IOException e) {

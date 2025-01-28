@@ -13,8 +13,6 @@ public class Servidor {
 
         ServerSocket socketEscucha = null;
 
-
-
         try{
             //Puerto por el que va a escuchar nuestro servidor
             socketEscucha = new ServerSocket(9876);

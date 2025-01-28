@@ -118,7 +118,7 @@ public class Peticion extends Thread {
             //La salida una vez realizada la operacion
             os = socket.getOutputStream();
             pw = new PrintWriter(os);
-            pw.write(result.toString() + "\n");
+            pw.write(result + "\n");
             //Aseguramos que el contenido se ha enviado
             pw.flush();
         } catch (IOException e) {

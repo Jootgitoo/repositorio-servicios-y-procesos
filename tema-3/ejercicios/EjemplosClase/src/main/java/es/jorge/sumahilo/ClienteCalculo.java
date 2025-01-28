@@ -32,17 +32,17 @@ public class ClienteCalculo {
             socket.connect(direccion); //Lo conecto al servidor
 
             //Escribe la peticion al servidor --> Hablamos al servidor
-            pw = new PrintWriter(socket.getOutputStream());
+            pw = new PrintWriter(socket.getOutputStream(), true);
             pw.print("-\n");
             pw.print("20\n");
             pw.print("15\n");
-            pw.flush();
+
 
             //Lee la respuesta del servidor
             isr = new InputStreamReader(socket.getInputStream());
             bfr = new BufferedReader(isr);
             String resultado = bfr.readLine();
-            System.out.println("El resultado fue:" + resultado);
+            System.out.println("El resultado fue: " + resultado);
         }
         catch(IOException e) {
             e.printStackTrace();
