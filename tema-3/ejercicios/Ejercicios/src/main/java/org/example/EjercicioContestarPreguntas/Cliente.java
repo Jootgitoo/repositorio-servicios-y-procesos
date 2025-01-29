@@ -36,7 +36,6 @@ public class Cliente {
             while (!salir){
 
                 //Pedimos al usuario que escriba la pregunta
-
                 System.out.print("Escribe tu pregunta: ");
                 String pregunta = scanner.nextLine();
 
@@ -59,6 +58,7 @@ public class Cliente {
                 System.out.println();
                 System.out.println();
             }
+            System.out.println("Saliendo...");
 
         } catch (IOException e) {
             throw new RuntimeException(e);
