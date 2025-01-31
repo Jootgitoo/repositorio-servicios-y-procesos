@@ -1,10 +1,10 @@
 package org.example.email;
 
 import javax.activation.DataHandler;
+import javax.activation.DataSource;
 import javax.activation.FileDataSource;
 import javax.mail.*;
 import javax.mail.internet.*;
-import javax.sql.DataSource;
 import java.util.Properties;
 
 public class EmailSenderWithAttachment {
@@ -14,8 +14,8 @@ public class EmailSenderWithAttachment {
                                         String attachmentPath) {
 
         //Crear Contraseñas de aplicación: java
-        final String username = "TU_CORREO_DE GMAIL";
-        final String password = "TU CONTRASEÑA DE APLICACION JAVA DE GMAIL";
+        final String username = "jorgehm260505@gmail.com";
+        final String password = "ihru kymm qjoi kswpl";
 
         Properties props = new Properties();
         props.put("mail.transport.protocol", "smtp");
@@ -67,10 +67,6 @@ public class EmailSenderWithAttachment {
 
         } catch (MessagingException e) {
             e.printStackTrace();
-        } catch (AddressException e) {
-            throw new RuntimeException(e);
-        } catch (MessagingException e) {
-            throw new RuntimeException(e);
         }
     }
 

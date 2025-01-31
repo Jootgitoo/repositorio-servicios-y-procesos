@@ -11,8 +11,8 @@ public class EmailSender {
 
     public void sendEmail(String recipient, String subject, String body) {
         //Crear Contraseñas de aplicación: java
-        final String username = "TU_CORREO_DE GMAIL";
-        final String password = "TU CONTRASEÑA DE APLICACION JAVA DE GMAIL";
+        final String username = "jorgehm260505@gmail.com";
+        final String password = "ihru kymm qjoi kspl";
 
         Properties props = new Properties();
         props.put("mail.transport.protocol", "smtp");
@@ -48,7 +48,7 @@ public class EmailSender {
     }
 
     public static void main(String[] args) {
-        String email = "DIRECCION DE CORREO A LA QUE QUIERES ENVIAR EL CORREO";
+        String email = "jorgehm260505@gmail.com";
         String subject = "Test Email";
         String body = "Hola,\nEsto es una prueba de envio de correo.";
 
