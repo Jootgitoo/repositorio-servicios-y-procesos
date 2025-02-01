@@ -40,7 +40,7 @@ public class Peticion extends Thread{
             String respuesta = responderACliente(pregunta);
 
             //Respondemos al cliente
-            os =  new ObjectOutputStream( socket.getOutputStream() );
+            os =  socket.getOutputStream();
             pw = new PrintWriter(os, true);
 
             pw.println(respuesta);
@@ -75,7 +75,7 @@ public class Peticion extends Thread{
             break;
 
             case "salir":
-                respuesta = "saliendo... \n";
+                respuesta = "saliendo";
             break;
 
             default:

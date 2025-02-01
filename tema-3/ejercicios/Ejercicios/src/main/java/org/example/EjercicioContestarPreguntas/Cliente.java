@@ -3,6 +3,7 @@ package org.example.EjercicioContestarPreguntas;
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class Cliente {
@@ -34,11 +35,11 @@ public class Cliente {
 
             while (!salir){
 
-                //Para blaar al servidior
+                //Para hablar al servidior
                 pw = new PrintWriter(socket.getOutputStream(), true);
 
                 //Para hablar al cliente
-                isr = new InputStreamReader(socket.getInputStream());
+                isr = new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8);
                 bfr = new BufferedReader(isr);
 
 
@@ -55,7 +56,7 @@ public class Cliente {
 
                 System.out.println(resultado);
 
-                if(resultado.equals("salir")){
+                if(resultado.equalsIgnoreCase("saliendo")){
                     salir = true;
                 }
 
