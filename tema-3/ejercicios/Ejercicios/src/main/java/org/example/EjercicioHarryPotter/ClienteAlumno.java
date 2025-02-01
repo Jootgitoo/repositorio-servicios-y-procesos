@@ -14,7 +14,7 @@ public class ClienteAlumno {
     //Para recibir los datos del servidor
     BufferedReader bfr = null;
     InputStreamReader isr = null;
-    ObjectInputStream ois = null;
+
 
 //----------------------------------------------------------------------------
     //MÉTODOS
@@ -55,6 +55,7 @@ public class ClienteAlumno {
                     System.out.println("saliendo...");
                 }
             }
+            System.out.println();
             Thread.sleep(2000);
         }
         bfr.close();

@@ -28,39 +28,49 @@ public class Peticion extends Thread{
         InputStream is = null;
         InputStreamReader isr = null;
         BufferedReader bfr = null;
-        OutputStream os = null;
+        ObjectInputStream ois = null;
         PrintWriter pw = null;
 
         System.out.println("Conexion con el cliente recibida");
 
         while (true){
 
-            //Escucho lo que me pida el cliente
+            //Para escuchar lo que me pide el cliente
             is = socket.getInputStream();
             isr = new InputStreamReader(is);
             bfr = new BufferedReader(isr);
 
-            pw = new PrintWriter(socket.getOutputStream());
 
-            String snumeroLibros;
-            if ( (snumeroLibros = bfr.readLine()) != null ){ //Nos manda un numero de libros
-                int numeroLibros = Integer.parseInt(snumeroLibros);
+            //Para devolverle la informacion al cliente
+            pw = new PrintWriter(socket.getOutputStream(), true);
 
-                //Obtengo los libros
-                List<Libro> listaLibrosDevueltos = srv.obtenerLibrosPedidos(numeroLibros);
+            //Leemos el nombre del libro
+            String nombreLibro = bfr.readLine();
 
-                //Se los devuelvo
-                if( listaLibrosDevueltos.isEmpty() ){
+            //Leemos cuantos libros quiere
+            Integer numeroLibros = Integer.parseInt( bfr.readLine() );
 
-                    pw.println("No hay mas libros disponibles. Vuelva otro dia");
 
-                } else {
+            //Obtengo los libros
+            List<Libro> listaLibrosDevueltos = srv.obtenerLibrosPedidos(nombreLibro, numeroLibros);
 
-                    for (Libro l : listaLibrosDevueltos) {
-                        pw.println("Titulo: " + l.getTitulo());
-                    }
+            //Se los devuelvo
+            if( listaLibrosDevueltos.isEmpty() ){
+
+                pw.println("No hay mas libros disponibles. Vuelva otro dia");
+                pw.println("FIN_RESPUESTA");
+                System.out.println("=====No hay mas libros=====");
+
+            } else {
+
+                for (Libro l : listaLibrosDevueltos) {
+                    pw.println("Titulo: " + l.getTitulo() +"\n");
                 }
+                pw.println("FIN_RESPUESTA");
+
+                System.out.println("=====Libros deuvletos=====");
             }
+
         }
 
 

@@ -26,10 +26,10 @@ public class ServidorLibreria {
     }
 
     public void rellenarListaLibros(List<Libro>lista){
-        Libro l1 = new Libro(2, "Libro 1");
+        Libro l1 = new Libro(5, "Libro 1");
         Libro l2 = new Libro(1, "Libro 2");
         Libro l3 = new Libro(2, "Libro 3");
-        Libro l4 = new Libro(0, "Libro 4");
+        Libro l4 = new Libro(7, "Libro 4");
         Libro l5 = new Libro(1, "Libro 5");
 
 
@@ -64,23 +64,18 @@ public class ServidorLibreria {
         }
     }
 
-    public List<Libro> obtenerLibrosPedidos(int numeroLibros){
+    public List<Libro> obtenerLibrosPedidos(String nombreLibro, int numeroLibros){
         List<Libro> listaAux = new ArrayList<>();
 
-        //Contamos los libros que llevamos en la lista
-        int cont = 0;
-
-        for(int i=0; i<listaLibros.size(); i++){
-            if(cont < numeroLibros){
-                listaAux.add( listaLibros.get(i) );
-                listaLibros.get(i).setCantidad( listaLibros.get(i).getCantidad() - 1 );
-                cont++;
-            } else {
-                break;
+        for(Libro l: listaLibros){
+            if(l.getTitulo().equalsIgnoreCase(nombreLibro) && l.getCantidad() >= numeroLibros){
+                for (int i=0; i<numeroLibros; i++){
+                    listaAux.add(l);
+                    l.setCantidad( l.getCantidad() - 1 );
+                }
             }
         }
-
-        return listaLibros;
+        return listaAux;
     }
 
 }

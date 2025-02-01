@@ -28,12 +28,12 @@ public class Cliente {
             System.out.println("conexion cliente hecha");
 
             //Hablamos al servidor
-            pw = new PrintWriter(socket.getOutputStream());
+            pw = new PrintWriter(socket.getOutputStream(), true);
             pw.println("3");
             pw.println("ABC");
             pw.println("ZZ");
             pw.println("AAA");
-            pw.flush();
+
 
             //Recogemos la información del servidor
             isr = new InputStreamReader(socket.getInputStream());

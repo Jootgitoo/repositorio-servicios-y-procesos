@@ -30,9 +30,7 @@ public class Peticion extends Thread{
 
         System.out.println("Conexion con el cliente recibida!");
 
-        boolean salir = false;
-
-        while(!salir){
+        while(true){
 
             //Leemos la pregunta del cliente
             String pregunta = bf.readLine();
@@ -41,20 +39,13 @@ public class Peticion extends Thread{
             //Buscamos cual es la respuesta a la pregunta
             String respuesta = responderACliente(pregunta);
 
-            if(respuesta.equalsIgnoreCase("salir")){
-                salir = true;
-
-            }
-
             //Respondemos al cliente
-            os = socket.getOutputStream();
+            os =  new ObjectOutputStream( socket.getOutputStream() );
             pw = new PrintWriter(os, true);
-
 
             pw.println(respuesta);
             System.out.println("He respondido al cliente");
         }
-        socket.close();
 
     }
 
@@ -84,7 +75,7 @@ public class Peticion extends Thread{
             break;
 
             case "salir":
-                respuesta = "salir \n";
+                respuesta = "saliendo... \n";
             break;
 
             default:
@@ -95,20 +86,6 @@ public class Peticion extends Thread{
         return respuesta;
     }
 
-
-    /**
-     * Método para cerrar el socket
-     * @param socket Socket que vamos a cerrar
-     */
-    private static void close(Closeable socket) {
-        try {
-            if (null != socket) {
-                socket.close();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
 
 

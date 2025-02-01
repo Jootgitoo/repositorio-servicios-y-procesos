@@ -1,5 +1,7 @@
 package org.example.EjercicioMaquinaRefrescos;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -28,20 +30,40 @@ public class Cliente {
             //Lo conecto al servidor
             socket.connect(direccion);
 
-            //Hablamos al servidor
-            pw = new PrintWriter(socket.getOutputStream());
-            pw.println("50");
-            System.out.println("Peticion de 50 refrescos");
-            //pw.println("25");
-            //pw.println("25");
-
-            //Recogemos la información del servidor
-            isr = new InputStreamReader(socket.getInputStream());
-            bfr = new BufferedReader(isr);
-            System.out.println(bfr.readLine());
+            boolean salir = false;
+            while (!salir){
+                //Hablamos al servidor
+                pw = new PrintWriter(socket.getOutputStream(), true);
+                pw.println("9");
+                System.out.println("Pido 9 refrescos");
 
 
-        } catch (IOException e) {
+                //Recogemos la información del servidor
+                isr = new InputStreamReader(socket.getInputStream());
+                bfr = new BufferedReader(isr);
+
+                String respuestaServidor = bfr.readLine(); //Recibimos la respuesta del servidor sobre los refrescos
+                System.out.println(respuestaServidor);
+
+                String refrescosRestantes = bfr.readLine(); //Recibimos cuantos refrescos quedan
+                System.out.println(refrescosRestantes);
+
+                String salimos = bfr.readLine(); //Si el cliente recibe una segunda linea diciendo salir salimos del bucle
+                if(salimos.equalsIgnoreCase("salir")){
+                    salir = true;
+                    System.out.println();
+                    System.out.println("Apagando la maquina...");
+                }
+                Thread.sleep(1000);
+
+                System.out.println();
+            }
+            bfr.close();
+            isr.close();
+            pw.close();
+            socket.close();
+
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }

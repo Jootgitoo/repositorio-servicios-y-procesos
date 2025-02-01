@@ -38,38 +38,47 @@ public class Cliente {
         System.out.println("Cliente conectado al servidor");
 
         boolean salir = false;
+        scanner = new Scanner(System.in);
         while (!salir){
+
+            //Pregunto al cliente que libro quiere
+            System.out.print("Que libro quieres coger: ");
+            String nombreLibro = scanner.nextLine();
 
             //Pregunto al cliente cuantos libros quiere obtener
             System.out.print("Cuantos libros quieres coger de la libreria: ");
-            scanner = new Scanner(System.in);
-
             String numeroLibros = scanner.nextLine();
 
+            //Envio ambas lineas al servidor
             pw = new PrintWriter( socket.getOutputStream(), true);
-            //Envio el numero de libros que quiere el cliente al servidor
+            pw.println(nombreLibro);
             pw.println(numeroLibros);
 
-            //Recojo la informacion del servidor
+            //Leo todas las respuestas del servidor
             isr = new InputStreamReader(socket.getInputStream());
             bfr = new BufferedReader(isr);
 
-            //Leo todas las respuestas del servidor
             String respuesta;
-            while ( (respuesta = bfr.readLine()) != null){
+
+            while (true) {
+                respuesta = bfr.readLine();
+                if (respuesta.equalsIgnoreCase("FIN_RESPUESTA")) {
+                    break;
+                }
                 System.out.println(respuesta);
 
-                if(respuesta.equalsIgnoreCase("No hay mas libros disponibles. Vuelva otro dia")){
+                if (respuesta.equalsIgnoreCase("No hay mas libros disponibles. Vuelva otro dia")) {
                     salir = true;
-                    System.out.println("saliendo...");
+                    System.out.println("Saliendo...");
+                    break;
                 }
             }
-
-            bfr.close();
-            isr.close();
-            pw.close();
-            socket.close();
+            System.out.println("======================================================================");
         }
+        bfr.close();
+        isr.close();
+        pw.close();
+        socket.close();
 
     }
 }
