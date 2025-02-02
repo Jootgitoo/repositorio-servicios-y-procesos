@@ -49,7 +49,7 @@ public class Cliente {
                 System.out.println(inputServidor);
 
 
-                if(inputServidor.equalsIgnoreCase("Fin juego")){
+                if(inputServidor.equalsIgnoreCase("fin_juego")){
                     salir = true;
                     break;
                 }

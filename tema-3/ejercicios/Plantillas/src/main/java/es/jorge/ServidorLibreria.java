@@ -1,25 +1,14 @@
-package org.example.EjercicioAdivinaNumero;
+package es.jorge;
+
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Servidor {
-
-    private int numeroAleatorio;
-
-    public Servidor(){
-        crearNumeroAleatorio();
-    }
-
     public static void main(String[] args) throws IOException {
         Servidor servidor = new Servidor();
         servidor.crearServidor();
-
-    }
-
-    public void crearNumeroAleatorio(){
-        this.numeroAleatorio = (int) (Math.random() * 10) + 1;
     }
 
     public void crearServidor() throws IOException {
@@ -44,9 +33,5 @@ public class Servidor {
                 throw e;
             }
         }
-    }
-
-    public int getNumeroAleatorio() {
-        return numeroAleatorio;
     }
 }

@@ -1,23 +1,22 @@
 package org.example.EjercicioAdivinaNumero;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
 public class Cliente {
 
-    Socket socket = null;
+    Socket socket;
 
     //Para hablar al servidor
-    ObjectOutputStream oos = null;
+    PrintWriter pw;
 
-    //Para ensordecer al servidor
-    ObjectInputStream ois = null;
+    //Para recoger informacion
+    InputStreamReader isr = null;
+    BufferedReader bf = null;
 
-    //Para pedirle informacion al cliente por consola
+    //Para interactuar con el usuario
     Scanner scanner = null;
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -25,60 +24,58 @@ public class Cliente {
         cliente.iniciarCliente();
     }
 
-    public void iniciarCliente() throws IOException, ClassNotFoundException {
 
-        //Direccion a donde me quiero conectar
+    public void iniciarCliente() throws IOException{
         InetSocketAddress direccion = new InetSocketAddress("localhost", 9876);
 
-        //Inicio el socket
         socket = new Socket();
 
-        //Me conecto
         socket.connect(direccion);
-        System.out.println("Cliente conectado al servidor");
-        System.out.println();
+        System.out.println("Conexion cliente --> servidor");
 
+        //Pedimos un numero al usuario y se lo mandamos al cliente
         scanner = new Scanner(System.in);
-        oos = new ObjectOutputStream(socket.getOutputStream());
-        ois = new ObjectInputStream(socket.getInputStream());
-
 
         boolean salir = false;
         while(!salir){
 
+            //Para que mande informacion
+            pw = new PrintWriter(socket.getOutputStream(), true);
 
-            //Le pedimos un número al cliente
-            System.out.print("Indica un número: ");
+            //Para que reciba informacion
+            isr = new InputStreamReader( socket.getInputStream() );
+            bf = new BufferedReader(isr);
+
+
+            System.out.print("> Inidique un numero: ");
+
             String numeroUsuario = scanner.nextLine();
 
-            //Le mando el numero del usuario al servidor
-            oos.writeObject(numeroUsuario);
+            //Envio el numero al servidor
+            pw.println(numeroUsuario);
 
-            //Recojo la respuesta del servidor
-            while (!salir){
+            String respuestaServidor;
 
-                String respuestaServidor = (String) ois.readObject();
+            while (true){
+                respuestaServidor = bf.readLine();
 
                 if(respuestaServidor.equalsIgnoreCase("fin_juego")){
                     salir = true;
-                }else {
-                    System.out.println(respuestaServidor);
+                    System.out.println("Saliendo...");
+                    break;
                 }
+                System.out.println(respuestaServidor);
 
             }
+            System.out.println();
+
         }
-        //close
-        oos.close();
-        ois.close();
-        scanner.close();
+        pw.close();
+        bf.close();
+        isr.close();
         socket.close();
     }
-
 }
-
-
-
-
 
 
 

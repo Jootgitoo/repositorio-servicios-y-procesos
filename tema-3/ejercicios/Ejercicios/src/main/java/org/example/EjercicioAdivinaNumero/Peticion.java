@@ -1,32 +1,29 @@
 package org.example.EjercicioAdivinaNumero;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 
 public class Peticion extends Thread{
 
     Socket socket;
-    NumeroAleatorio claseNumAleatorio;
+    Servidor srv;
 
-    //Para hablar al cliente
-    ObjectOutputStream oos = null;
+    //Para enviar cosas al cliente
+   PrintWriter pw = null;
 
-    //Para recoger la informacion del cliente
-    ObjectInputStream ois = null;
-
-    //Guardo en esta variable el numero aleatorio creado
-    int numeroAleatorioServidor;
+    //Para recibir cosas del cliente
+    InputStream is = null;
+    InputStreamReader isr = null;
+    BufferedReader bfr = null;
 
     public Peticion(Socket socket){
         this.socket = socket;
-        this.numeroAleatorioServidor = claseNumAleatorio.crearNumeroAleatorio();
+        srv = new Servidor();
     }
 
     @Override
     public void run(){
+        //Cuando se inicia el hilo se ejecuta el método escuchar
         try {
             escuchar();
         } catch (IOException | ClassNotFoundException e) {
@@ -34,46 +31,38 @@ public class Peticion extends Thread{
         }
     }
 
-    private void escuchar() throws IOException, ClassNotFoundException {
+    public void escuchar() throws IOException, ClassNotFoundException {
 
-        System.out.println("Conexion con el cliente exitosa");
+        while(true) {
 
-        while (true) {
-            ois = new ObjectInputStream(socket.getInputStream());
+            is = socket.getInputStream();
+            isr = new InputStreamReader(is);
+            bfr = new BufferedReader( isr );
 
-            //Escucho el numero del usuario
-            String sNumeroUsuario = (String) ois.readObject();
+            //Escuchamos el numero
+            String SnumeroUsuario = bfr.readLine();
 
-            //Lo transformo en un String
-            int numeroUsuario = Integer.parseInt(sNumeroUsuario);
+            //Lo tranformamos a int
+            int numeroUsuario = Integer.parseInt(SnumeroUsuario);
 
-            //Comprobamos si el usuario ha acertado el numero
-            if (numeroUsuario < numeroAleatorioServidor) {
+            pw = new PrintWriter( socket.getOutputStream(), true);
+            //Lo comparamos con el numero del servidor
+            if (numeroUsuario < srv.getNumeroAleatorio()) {
 
-                oos.writeObject("El numero indicado es menor");
+                pw.println("El numero indicado es menor al que tienes que adivinar");
 
-            } else if (numeroUsuario == numeroAleatorioServidor) {
+            } else if (numeroUsuario == srv.getNumeroAleatorio()) {
+                pw.println("Has acertado el numero!");
+                pw.println("fin_juego");
 
-                oos.writeObject("Has acertado el numero! :)");
-                oos.writeObject("fin_juego");
+            } else if (numeroUsuario > srv.getNumeroAleatorio()) {
 
-            } else if (numeroUsuario > numeroAleatorioServidor) {
+                pw.println("El numero indicado es menor");
 
-                oos.writeObject("El numero indicado es mayor");
-
-            } else {
-                oos.writeObject("Opcion default");
             }
         }
     }
 }
-
-
-
-
-
-
-
 
 
 
