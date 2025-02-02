@@ -6,19 +6,19 @@ import java.net.Socket;
 
 public class Servidor {
 
-
-
-    int numeroAleatorio;
-
     public static void main(String[] args) throws IOException {
         Servidor servidor = new Servidor();
         servidor.crearServidor();
     }
-    
+
+    public Servidor(){
+        
+    }
+
     public void crearServidor() throws IOException {
         ServerSocket socketEscucha = null;
     
-        socketEscucha = new ServerSocket(2000);
+        socketEscucha = new ServerSocket(9876);
         System.out.println("Arrancando el servidor");
     
         //Creamos un servidor infinito (Bucle infinito)
