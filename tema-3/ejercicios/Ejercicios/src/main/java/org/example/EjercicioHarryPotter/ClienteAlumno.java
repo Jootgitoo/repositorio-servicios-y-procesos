@@ -14,7 +14,7 @@ public class ClienteAlumno {
     //Para recibir los datos del servidor
     BufferedReader bfr = null;
     InputStreamReader isr = null;
-    ObjectInputStream ois = null;
+
 
 //----------------------------------------------------------------------------
     //MÉTODOS
@@ -24,7 +24,7 @@ public class ClienteAlumno {
         cliente.inicializarCliente();
     }
 
-    public void inicializarCliente() throws IOException, ClassNotFoundException, InterruptedException {
+    public void inicializarCliente() throws IOException, InterruptedException {
         InetSocketAddress direccion = new InetSocketAddress("localhost", 9876);
 
         //Inicio el socket
@@ -55,6 +55,7 @@ public class ClienteAlumno {
                     System.out.println("saliendo...");
                 }
             }
+            System.out.println();
             Thread.sleep(2000);
         }
         bfr.close();

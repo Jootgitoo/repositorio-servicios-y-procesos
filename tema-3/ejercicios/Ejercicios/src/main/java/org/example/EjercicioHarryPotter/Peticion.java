@@ -26,7 +26,6 @@ public class Peticion extends Thread{
         InputStream is = null;
         InputStreamReader isr = null;
         BufferedReader bf = null;
-        OutputStream os = null;
         PrintWriter pw = null;
 
 
