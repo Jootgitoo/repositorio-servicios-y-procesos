@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class ProcessManager {
 
-    public void calcularProceso(String operador, int num1, int num2) throws IOException, InterruptedException {
+    public void lanzarProceso(String operador, int num1, int num2) throws IOException, InterruptedException {
 
         //Variable process
         Process process;
@@ -33,7 +33,7 @@ public class ProcessManager {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         ProcessManager l = new ProcessManager();
-        l.calcularProceso("+", 5, 10);
+        l.lanzarProceso("+", 5, 10);
     }
 
 
