@@ -7,15 +7,13 @@ public class ProcessManager {
 
     public void minimoLanzador(int num1, int num2, String ficheroSalida) {
 
-        Process process = null;
+        Process process;
 
         try {
 
             String clase = ".;./target/classes";
 
-            //ProcessBuilder pb = new ProcessBuilder("java", "-cp", clase, "es.jorge.uno.Minimo", ficheroSalida);
-
-            ProcessBuilder pb = new ProcessBuilder("java", "-cp", clase, "es.jorge.uno.Minimo", ficheroSalida);
+            ProcessBuilder pb = new ProcessBuilder("java", "-cp", clase, "es.jorge.uno.Minimo", String.valueOf(num1), String.valueOf(num2));
 
             pb.redirectError(new File("files" + File.separator + "error_Jorge.txt"));
             pb.redirectOutput(new File("files" + File.separator + ficheroSalida));
@@ -32,11 +30,7 @@ public class ProcessManager {
 
 
 
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-
-
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
 
@@ -45,7 +39,7 @@ public class ProcessManager {
 
     public static void main(String[] args) {
         ProcessManager lanzador = new ProcessManager();
-        lanzador.minimoLanzador(5, 3, "minimo_jorge.txt");
+        lanzador.minimoLanzador(5, 100, "minimo_jorge.txt");
     }
 }
 

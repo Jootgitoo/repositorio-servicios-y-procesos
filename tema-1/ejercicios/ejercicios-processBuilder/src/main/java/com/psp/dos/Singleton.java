@@ -28,6 +28,5 @@ public class Singleton {
         return numInstancias;
     }
 
-
-
 }
+
