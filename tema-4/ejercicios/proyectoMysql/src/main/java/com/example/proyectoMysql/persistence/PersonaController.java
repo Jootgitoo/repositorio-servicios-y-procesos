@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @Entity
-@EntityScan(basePackages = {"com.example.proyectoMysql.persistence"})
+@EntityScan(basePackages = {"com.example.proyectoMysql"})
 @RestController
 @RequestMapping("/persona")
 public class PersonaController {
