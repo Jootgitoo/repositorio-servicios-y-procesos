@@ -1,28 +1,28 @@
-package org.example.EjercicioSumasASCII;
+package es.jorge.VaritasString;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-
 public class Servidor {
+
     public static void main(String[] args) throws IOException {
 
         ServerSocket socketEscucha = null;
 
         try{
-            //Puerto por el que va a escuchar nuestro servidor
+
             socketEscucha = new ServerSocket(9876);
             System.out.println("Arrancando el servidor");
 
-            //Creamos un servidor infinito (Bucle infinito)
             while (true){
                 try {
-                    //Establezco la conexion
                     Socket conexion = socketEscucha.accept();
 
-                    //Creamos un hilo que manejar la conexion con el cliente
-                    Peticion hilo = new Peticion(conexion);
+                    //Suma suma = new Suma();
+                    Varitas varitas = new Varitas();
+
+                    Peticion hilo = new Peticion(conexion, varitas);
 
                     hilo.start();
                 } catch (IOException e){
@@ -34,7 +34,6 @@ public class Servidor {
             e.printStackTrace();
             throw e;
         } finally {
-            //Cerramos la conexion
             try{
                 if (socketEscucha != null){
                     socketEscucha.close();
@@ -44,6 +43,4 @@ public class Servidor {
             }
         }
     }
-
-
 }

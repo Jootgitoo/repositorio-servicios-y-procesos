@@ -1,11 +1,11 @@
-package org.example.EjercicioSumasASCII;
+package es.jorge.SumasAscii;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-
 public class Servidor {
+
     public static void main(String[] args) throws IOException {
 
         ServerSocket socketEscucha = null;
@@ -21,8 +21,11 @@ public class Servidor {
                     //Establezco la conexion
                     Socket conexion = socketEscucha.accept();
 
+                    //Creamos una clase suma que será la que utilicen los clientes
+                    Suma suma = new Suma();
+
                     //Creamos un hilo que manejar la conexion con el cliente
-                    Peticion hilo = new Peticion(conexion);
+                    Peticion hilo = new Peticion(conexion, suma);
 
                     hilo.start();
                 } catch (IOException e){
@@ -44,6 +47,4 @@ public class Servidor {
             }
         }
     }
-
-
 }
